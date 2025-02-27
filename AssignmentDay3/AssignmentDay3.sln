@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssignmentDay3", "AssignmentDay3\AssignmentDay3.csproj", "{2CA0740F-E943-4003-AC83-2265DF9D7E70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ouestion3_UserPassword", "Ouestion3_UserPassword\Ouestion3_UserPassword.csproj", "{55CC424F-80C6-454A-8671-1E0503BF54B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CA0740F-E943-4003-AC83-2265DF9D7E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CA0740F-E943-4003-AC83-2265DF9D7E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CA0740F-E943-4003-AC83-2265DF9D7E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CA0740F-E943-4003-AC83-2265DF9D7E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55CC424F-80C6-454A-8671-1E0503BF54B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55CC424F-80C6-454A-8671-1E0503BF54B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55CC424F-80C6-454A-8671-1E0503BF54B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55CC424F-80C6-454A-8671-1E0503BF54B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

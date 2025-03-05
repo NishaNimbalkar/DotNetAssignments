@@ -19,7 +19,7 @@ internal class Program
 
 
 
-        Employee m2 = new Manager { name = "neha", Bonus = 2300, salary = 50600 };
-        m2.displaydetails();
+        Employee m2 = new Manager { Name = "neha", Bonus = 2300, Salary = 50600 };
+        m2.Displaydetails();
     }
 }

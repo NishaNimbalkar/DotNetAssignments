@@ -8,12 +8,12 @@ namespace Assignment4_Ouestion2
 {
    internal class Employee
     {
-        public string name { get; set; }
-        public int salary { get; set; }
+        public string Name { get; set; }
+        public int Salary { get; set; }
 
-        public virtual void displaydetails()
+        public virtual void Displaydetails()
         {
-            Console.WriteLine($"Name is {name} and salary is {salary} ");
+            Console.WriteLine($"Name is {Name} and salary is {Salary} ");
         }
     }
 }

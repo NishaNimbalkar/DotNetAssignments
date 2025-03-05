@@ -13,9 +13,9 @@ namespace Assignment4_Ouestion2
             public int Bonus { get; set; }
 
 
-            public override void displaydetails()
+            public override void Displaydetails()
             {
-                Console.WriteLine($"Name : {name}  salary : {salary}  bonus : {Bonus}");
+                Console.WriteLine($"Name : {Name}  salary : {Salary}  bonus : {Bonus}");
             }
 
         

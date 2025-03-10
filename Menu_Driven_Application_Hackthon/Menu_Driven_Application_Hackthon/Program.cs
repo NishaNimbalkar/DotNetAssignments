@@ -84,7 +84,10 @@ namespace Menu_Driven_Application_Hackthon
 
                         Console.WriteLine("Enter Policy Type (0 = Life, 1 = Health, 2 = Vehicle, 3 = Property):");
                         PolicyType type1 = (PolicyType)Enum.Parse(typeof(PolicyType), Console.ReadLine());
-                        Console.WriteLine("Your Policy choice is " + type1);
+                       
+                       
+
+                        //Console.WriteLine("Your Policy choice is " + type1);
 
                         Console.WriteLine("Enter Start Date (yyyy-MM-dd):");
                         DateTime startDate1 = DateTime.Parse(Console.ReadLine());

@@ -9,7 +9,9 @@ namespace Event_Management_System.Controllers
 {
     [ServiceFilter(typeof(ExceptionHandlerAttribute))]
 
-    //[Authorize(Roles ="Organizer,User")]
+    [Authorize(Roles = "Organizer")]
+    //[Authorize(Roles = "User")]
+
     public class EventController : Controller
     {
         public IEventService _eventService;
@@ -55,6 +57,7 @@ namespace Event_Management_System.Controllers
             //await _eventService.AddEvent(event1);
             //return RedirectToAction("GetAllEvents");
         }
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllEvents()
         {
             //await _eventService.GetAllEvents();

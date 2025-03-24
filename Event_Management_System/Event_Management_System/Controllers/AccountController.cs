@@ -90,6 +90,7 @@ namespace Event_Management_System.Controllers
         public async Task<IActionResult> LogOut()
         {
             await _signInManger.SignOutAsync();
+            //HttpContext.Session.Clear();
             return RedirectToAction("Login");
         }
 

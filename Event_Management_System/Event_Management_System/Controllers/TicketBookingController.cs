@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Event_Management_System.Controllers
 {
     
-    //[Authorize]
+    [Authorize]
     public class TicketBookingController : Controller
     {
         readonly ITicketBookingService _ticketBookingService;

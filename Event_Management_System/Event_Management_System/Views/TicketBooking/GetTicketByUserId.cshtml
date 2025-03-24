@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Event_Management_System.Models.TicketBooking>
+
+@{
+    ViewData["Title"] = "GetTicketByUserId";
+}
+
+<h1>Tickets for User</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Event Date</th>
+            <th>Quantity</th>
+            <th>Booking Date</th>
+            @* <th>Status</th> *@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model)
+        {
+            <tr>
+                <td>@ticket.Event?.Name ?? "No Event"</td>
+                <td>@ticket.Event?.Date.ToString("g") ?? "N/A"</td>
+                <td>@ticket.Quantity</td>
+                <td>@ticket.BookingDate.ToString("g")</td>
+                @* <td>@ticket.Status</td> *@
+            </tr>
+        }
+    </tbody>
+</table>

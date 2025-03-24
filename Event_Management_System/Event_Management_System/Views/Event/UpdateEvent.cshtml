@@ -1,0 +1,33 @@
+﻿@model Event_Management_System.Models.Event
+
+<h2>Update Event</h2>
+
+<form asp-action="UpdateEvent" method="post">
+    <input type="hidden" asp-for="EventId" />
+
+    <label>Event Name</label>
+    <input asp-for="Name" class="form-control" />
+
+    <label>Location</label>
+    <input asp-for="Location" class="form-control" />
+
+    <label>Date</label>
+    <input asp-for="Date" class="form-control" type="date" />
+
+    <label>Available Seats</label>
+    <input asp-for="AvailableSeats" class="form-control" type="number" />
+
+    <label>Ticket Price</label>
+    <input asp-for="TicketPrice" class="form-control" type="number" />
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+<div>
+    <a asp-action="GetAllEvents">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

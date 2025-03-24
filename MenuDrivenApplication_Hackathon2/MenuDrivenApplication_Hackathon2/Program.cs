@@ -94,7 +94,7 @@ internal class Program
 
                     Policy newPolicy1 = new Policy(policyId2, holderName1, type1, startDate1, endDate1);
                     var updatePolicy = policyRepository.UpdatePolicy(newPolicy1);
-                    if (updatePolicy!=null)
+                    if (updatePolicy!=0)
                     {
                         Console.WriteLine("Policy Updated Successfully");
                     }
@@ -114,7 +114,7 @@ internal class Program
 
 
 
-                case 7:
+                case 6:
                     Console.WriteLine("Exiting the Application...");
                     return;
                 default:

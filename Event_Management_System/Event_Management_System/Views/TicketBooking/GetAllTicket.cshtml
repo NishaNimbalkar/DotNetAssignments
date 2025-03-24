@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Event_Management_System.Models.TicketBooking>
+
+@{
+    ViewData["Title"] = "GetAllTicket";
+}
+
+<h1>Get All Bookings</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="AddBooking">Create New Booking</a>
+</p>
+
+<!-- Display success or error messages -->
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Event.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+            <th>@Html.DisplayNameFor(model => model.BookingDate)</th>
+            @* <th>@Html.DisplayNameFor(model=>model.TotalPriceOFTicket)</th> *@
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Event.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.BookingDate)</td>
+                @* <td>@Html.DisplayFor(modelItem => item.TotalPriceOFTicket)</td> *@
+
+                <td>
+                    <!-- Cancel Booking Button -->
+                    <form asp-action="CancelBooking" method="post" onsubmit="return confirm('Are you sure you want to cancel this booking?');">
+                        <input type="hidden" name="bookingId" value="@item.TicketId" />
+                        <button type="submit" class="btn btn-danger btn-sm">Cancel</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

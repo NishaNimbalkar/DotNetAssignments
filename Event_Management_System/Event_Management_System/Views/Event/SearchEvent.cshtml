@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Event_Management_System.Models.Event>
+
+@{
+    ViewData["Title"] = "SearchEvent";
+}
+
+<h2>Search Event by ID</h2>
+
+<form asp-action="SearchEvent" method="get">
+    <div class="form-group">
+        <label for="eventId">Enter Event ID:</label>
+        <input type="number" name="eventId" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <h3>Search Results:</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().Name)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Location)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Date)</th>
+                <th>@Html.DisplayNameFor(model => model.First().AvailableSeats)</th>
+                <th>@Html.DisplayNameFor(model => model.First().TicketPrice)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Location</td>
+                    <td>@item.Date</td>
+                    <td>@item.AvailableSeats</td>
+                    <td>@item.TicketPrice</td>
+                    <td>
+                        <a asp-action="GetEventById" asp-route-id="@item.EventId" class="btn btn-info">Details</a>
+                        <a asp-action="AddBooking" asp-route-eventId="@item.EventId" class="btn btn-success">Book Now</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (Model != null)
+{
+    <p>No events found for the given ID.</p>
+}

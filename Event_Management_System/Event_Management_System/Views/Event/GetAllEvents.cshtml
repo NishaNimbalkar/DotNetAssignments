@@ -1,0 +1,68 @@
+﻿@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@model IEnumerable<Event_Management_System.Models.Event>
+
+@{
+    ViewData["Title"] = "GetAllEvents";
+}
+
+<h1>GetAllEvents</h1>
+
+<div class="alert alert-success" role="alert">
+    @TempData["Msg"]
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<p>
+    @if (User.IsInRole("Organizer") || User.IsInRole("Admin"))
+    {
+        <a asp-action="AddEvent" class="btn btn-primary">Create New Event</a>
+    }
+    else{
+        <div>
+            <a asp-action="GetAllTicket" asp-controller="TicketBooking" class="btn btn-success">My Bookings</a>
+        </div>
+    }
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Location)</th>
+            <th>@Html.DisplayNameFor(model => model.Date)</th>
+            <th>@Html.DisplayNameFor(model => model.AvailableSeats)</th>
+            <th>@Html.DisplayNameFor(model => model.TicketPrice)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Location)</td>
+                <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                <td>@Html.DisplayFor(modelItem => item.AvailableSeats)</td>
+                <td>@Html.DisplayFor(modelItem => item.TicketPrice)</td>
+                <td>
+                    @if (User.IsInRole("Organizer") || User.IsInRole("Admin"))
+                    {
+                        <a asp-action="UpdateEvent" class="btn btn-warning" asp-route-id="@item.EventId">Edit</a>
+                        <a asp-action="GetEventById" class="btn btn-info" asp-route-id="@item.EventId">Details</a>
+                        <a asp-action="DeleteEvent" class="btn btn-danger" asp-route-id="@item.EventId">Delete</a>
+                    }
+
+                    else
+                    {
+                        <a asp-action="AddBooking" asp-controller="TicketBooking" asp-route-eventId="@item.EventId" class="btn btn-success">Book Now</a>
+                    }
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>

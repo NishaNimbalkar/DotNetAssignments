@@ -121,10 +121,10 @@ namespace MenuDrivenApplication_Hackathon2.Repository
                 {
                     Console.WriteLine(poe.Message);
 
-                    return null;
+                   
 
                 }
-
+                return null;
 
 
             }
@@ -139,14 +139,13 @@ namespace MenuDrivenApplication_Hackathon2.Repository
                
                 cmd.Parameters.AddWithValue("@PolicyId", policy.PolicyId);
                 cmd.Parameters.AddWithValue("@PolicyHolderName", policy.PolicyHolderName);
-                SqlParameter sqlParameter = cmd.Parameters.AddWithValue("@PolicyType", policy.PType);  // Assuming PolicyType is an enum
+                 cmd.Parameters.AddWithValue("@PolicyType", policy.PType);  // Assuming PolicyType is an enum
                 cmd.Parameters.AddWithValue("@StartDate", policy.StartDate);
                 cmd.Parameters.AddWithValue("@EndDate", policy.EndDate);
 
                 cmd.Connection = sqlconn;
                 sqlconn.Open();
 
-                // Execute the update query and return the number of affected rows
                 return cmd.ExecuteNonQuery();
             }
 

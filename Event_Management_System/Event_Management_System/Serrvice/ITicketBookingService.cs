@@ -5,7 +5,7 @@ namespace Event_Management_System.Serrvice
 {
     public interface ITicketBookingService
     {
-        Task<IEnumerable<TicketBooking>> GetAllTicket(string id);
+        Task<IEnumerable<TicketBooking>> GetAllBookings(string id);
        
       
         //Task<IEnumerable> GetAllUser();

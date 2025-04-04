@@ -27,7 +27,7 @@ namespace Event_Management_System.Controllers
         [Authorize]
 
         [HttpGet]
-        public async Task<IActionResult> GetAllTicket(string id)
+        public async Task<IActionResult> GetBookings(string id)
         {
             var user = await _userManager.GetUserAsync(User); 
             if (user == null)
@@ -35,7 +35,7 @@ namespace Event_Management_System.Controllers
                 return RedirectToAction("Login", "Account"); 
             }
 
-            var userTickets = await _ticketBookingService.GetAllTicket(user.Id); 
+            var userTickets = await _ticketBookingService.GetAllBookings(user.Id); 
             return View(userTickets);
         }
 
@@ -57,7 +57,7 @@ namespace Event_Management_System.Controllers
 
             ticketBooking.User = userId;
             await _ticketBookingService.AddBooking(ticketBooking);
-            return RedirectToAction("GetAllTicket");
+            return RedirectToAction("GetAllBookings");
         }
         [Authorize]
         [HttpPost]

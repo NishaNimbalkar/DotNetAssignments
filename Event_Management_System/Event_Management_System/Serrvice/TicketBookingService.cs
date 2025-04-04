@@ -21,11 +21,7 @@ namespace Event_Management_System.Serrvice
         //    return await _ticketBookingRepository.GetAllUser();
         //}
 
-        public async Task<IEnumerable<TicketBooking>> GetAllTicket(string id)
-        {
-            return await _ticketBookingRepository.GetAllTicket( id);
-        }
-
+       
        
 
         public async Task<int> AddBooking(TicketBooking ticketBooking)
@@ -44,6 +40,9 @@ namespace Event_Management_System.Serrvice
             return await _ticketBookingRepository.CancelBookingAsync(bookingId);
         }
 
-       
+        public async Task<IEnumerable<TicketBooking>> GetAllBookings(string id)
+        {
+            return await _ticketBookingRepository.GetAllBookings(id);
+        }
     }
 }

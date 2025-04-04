@@ -5,7 +5,7 @@ namespace Event_Management_System.Repository
 {
     public interface ITicketBookingRepository
     {
-        public Task<IEnumerable<TicketBooking>> GetAllTicket(string id);
+        public Task<IEnumerable<TicketBooking>> GetAllBookings(string id);
         Task<IEnumerable<Event>> GetAllEvents();
         //Task<IEnumerable> GetAllUser();
         Task<int> AddBooking(TicketBooking ticketBooking);

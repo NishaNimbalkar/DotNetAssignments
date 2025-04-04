@@ -22,7 +22,7 @@ namespace Event_Management_System.Repository
         {
             return await _eventDBContext.Events.ToListAsync();
         }
-        public async Task<IEnumerable<TicketBooking>> GetAllTicket(string id)
+        public async Task<IEnumerable<TicketBooking>> GetAllBookings(string id)
         {
             //return await _eventDBContext.TicketBookings.Include(u => u.User).Include(e => e.Event).FirstOrDefaultAsync(b => b.UserId == userId);
             var tickets = await _eventDBContext.TicketBookings

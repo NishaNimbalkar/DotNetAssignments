@@ -2,11 +2,13 @@
 using Event_Management_System.Models;
 using Event_Management_System.Models.Constants;
 using Event_Management_System.ModelView;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Event_Management_System.Controllers
 {
+    //[Authorize]
     public class AccountController : Controller
     {
         readonly UserManager<User> _userManager;

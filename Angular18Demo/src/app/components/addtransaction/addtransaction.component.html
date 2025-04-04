@@ -1,0 +1,42 @@
+
+<div>
+    <h3>Add New Transaction</h3>
+    <form #transactiontForm="ngForm" (ngSubmit)="addTransaction(transactiontForm)">
+      <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input type="number" id="amount1" class="form-control" [(ngModel)]="newTransactionModel.amount" name="amount" required />
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" id="description" class="form-control" [(ngModel)]="newTransactionModel.description" name="description" required />
+      </div>
+      <!-- <div class="mb-3">
+        <label for="description" class="form-label">AccountNumber</label>
+        <input type="text" id="description" class="form-control" [(ngModel)]="newTransactionModel.addTransaction" name="transaction" required />
+      </div> -->
+  
+      <!-- Transaction Type Dropdown -->
+      <!-- <div class="mb-3">
+        <label for="transactionType" class="form-label">Transaction Type</label>
+        <select
+          class="form-select"
+          id="transactionType"
+          name="transactionType"
+          [(ngModel)]="newTransactionModel.transactionType"
+          required
+        >
+          <option [value]="1">Credit</option>
+          <option [value]="2">Debit</option>
+        </select>
+      </div> -->
+  
+      <button type="submit" class="btn btn-primary">Add Transaction</button>
+    </form>
+  
+    <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+  </div>
+  <div class="text-center mt-3">
+    <span>View your </span>
+    <a class="text-decoration-none text-primary fw-bold" routerLink="/accounts">Account List</a>
+  </div>

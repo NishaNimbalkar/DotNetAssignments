@@ -1,0 +1,85 @@
+body {
+  background: url('/assets/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+
+/* 🌟 Navbar Styling */
+.navbar {
+  background-color: #007bff !important; /* Blue Background */
+  padding: 10px 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌟 Navbar Brand (Home) */
+.navbar-brand {
+  color: white !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 🌟 Navbar Toggler */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+/* 🌟 Navbar Links */
+.navbar-nav .nav-link {
+  color: white !important;
+  font-size: 1rem;
+  padding: 8px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* 🌟 Button-Like Links */
+.navbar-nav .nav-link.btn {
+  color: white !important;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+/* 🌟 Login Button */
+.navbar-nav .nav-link.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+/* 🌟 Register Button */
+.navbar-nav .nav-link.btn-primary {
+  background-color: #ffc107;
+  color: black !important;
+  border: none;
+}
+
+/* 🌟 Logout Button */
+.navbar-nav .nav-link.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+/* 🌟 Welcome Text */
+.navbar-nav .nav-link span {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* 🌟 Responsive Fix */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    display: block;
+    width: 100%;
+  }
+}
